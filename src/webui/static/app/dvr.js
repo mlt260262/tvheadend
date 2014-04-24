@@ -744,7 +744,7 @@ tvheadend.dvrsettings = function() {
 
 	var confreader = new Ext.data.JsonReader({
 		root : 'dvrSettings'
-	}, [ 'storage', 'postproc', 'retention', 'dayDirs', 'channelDirs',
+	}, [ 'storage', 'prerecord', 'postproc', 'retention', 'dayDirs', 'channelDirs',
 		'channelInTitle', 'container', 'cache', 'dateInTitle', 'timeInTitle',
 		'preExtraTime', 'postExtraTime', 'whitespaceInTitle', 'titleDirs',
 		'episodeInTitle', 'cleanTitle', 'tagFiles', 'commSkip', 'subtitleInTitle', 'episodeBeforeDate', 'rewritePAT', 'rewritePMT' ]);
@@ -861,7 +861,12 @@ tvheadend.dvrsettings = function() {
 		}), new Ext.form.Checkbox({
 			fieldLabel : 'Put episode in filename before date and time',
 			name : 'episodeBeforeDate'
-		}), {
+		}),{
+			width : 300,
+			fieldLabel : 'Pre-recording command',
+			name : 'prerecord'
+			
+		}, {
 			width : 300,
 			fieldLabel : 'Post-processor command',
 			name : 'postproc'
